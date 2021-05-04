@@ -1,3 +1,6 @@
+#Build config validation
+version: ~> 1.0
+
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
 
