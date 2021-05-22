@@ -16,6 +16,11 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_78159770279c_key -iv $encrypted_78159770279c_iv
     -in lab-devops-cloud-e2c2da9aee66.json.enc -out ../lab-devops-cloud-e2c2da9aee66.json
     -d
+addons:
+  sonarcloud:
+    organization: "adrsant-labs"
+    token:
+      secure: $SONAR_TOKEN
 
 jobs:
   include:
@@ -29,6 +34,7 @@ jobs:
         - coverage run test.py || travis_terminate 1;
         - coverage report app.py || travis_terminate 1;
         - coverage xml app.py || travis_terminate 1;
+        - sonar-scanner
 
     - stage: STG Deploy
       script: skip

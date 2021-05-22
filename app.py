@@ -1,13 +1,16 @@
 from flask import Flask
-from flask_wtf.csrf import CSRFProtect
+
+# from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
-csrf = CSRFProtect()
-csrf.init_app(app)
 
 
-@app.route('/', methods=(['GET']))
-@csrf.exempt
+# csrf = CSRFProtect()
+# csrf.init_app(app)
+
+
+# @csrf.exempt
+@app.route('/')
 def pagina_inicial():
     return "Hello World"
 
