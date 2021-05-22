@@ -17,15 +17,6 @@ before_install:
     -in lab-devops-cloud-e2c2da9aee66.json.enc -out ../lab-devops-cloud-e2c2da9aee66.json
     -d
 
-# Instalação de Módulos que são necessários para a Aplicação.
-install:
-  - pip install flask
-
-
-# Defini o script de Teste que deve rodar toda vez que o código for alterado.
-script:
-  - python -m unittest -v test
-
 jobs:
   include:
     - stage: Build
