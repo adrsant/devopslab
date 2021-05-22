@@ -12,6 +12,18 @@ python:
 os: linux
 dist: xenial
 
+# Cloud providers
+- provider: gae
+  keyfile: ../lab-devops-cloud-e2c2da9aee66.json
+  project: coherent-window-314223
+  on:
+    branch: masters
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_78159770279c_key -iv $encrypted_78159770279c_iv
+    -in lab-devops-cloud-e2c2da9aee66.json.enc -out ../lab-devops-cloud-e2c2da9aee66.json
+    -d
+
 # Instalação de Módulos que são necessários para a Aplicação.
 install:
   - pip install flask
