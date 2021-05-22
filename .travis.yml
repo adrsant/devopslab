@@ -32,7 +32,7 @@ jobs:
 
     - stage: STG Deploy
       script: skip
-      # Deploy no ambinte de stage (heroku)
+      # Deploy no ambinte de staging (heroku)
       deploy:
         provider: heroku
         strategy: api
@@ -56,6 +56,6 @@ jobs:
         on:
           branch: master
 
-#    - stage: PROD TEST
-#      script:
-#        - curl https://labdevopscloud-gaby.ue.r.appspot.com/ | grep Hello || travis_terminate 1;
+    - stage: PROD TEST
+      script:
+        - curl https://coherent-window-314223.uc.r.appspot.com/ | grep Hello || travis_terminate 1;
