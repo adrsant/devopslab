@@ -6,7 +6,7 @@ csrf = CSRFProtect()
 csrf.init_app(app)
 
 
-@app.route("/")
+@app.route('/', methods=(['GET']))
 @csrf.exempt
 def pagina_inicial():
     return "Hello World"
