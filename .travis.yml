@@ -18,7 +18,7 @@ before_install:
     -d
 addons:
   sonarcloud:
-    organization: "adrsant-labs"
+    organization: "adrsant"
     token:
       secure: "MFvNYLN9mT4ETBgW7zbsk/t8qOWv00EjPydZK6T6oQn6NKoE9msnhhxmQAEV45ZXb3duid0SJinBKWrncs1ZCoNsz6EulDZiADFzL9kaIR4qZfLNT4CojhZiWGWvzWqcLL4Wi9L08QiCb14s9tZpsIulGiAvHuLMb4RjA0jMxICZEfcoTMwuNEo+39rGLiCK9WRsr1Q7a94kf+UgJS0nwAhaz6J5mPlVXbdSECD4fuC+FkitOwlR2ZYLVdEggMk4wOJg/vRR5YYGvAL+o5jaEnavx8pnps7rCcS71bYuNjnLP5PVTt88vUE8fjIXtxGFLoaikkKUv646reCYjUsUZaJE4pbUHiFn2hPbMAQrebWk2DIs9JNSP2mYjjpQsI5gOkCH+d4Cr+v/KiJy16THVGkFUwnjBgUfAQXWSb2u5SQljJz15zXx2XQ1mcz7c7Z6cDBnQg6eBKDmKYe6EGpUaTnxXjJJL0Q/EP91lUh9OgLBHjUIOkWUGLn0uoT2YcHwaBvbQWDyhxSyqCOBN3jOQNbDxNge5Q79XdXayHgFOdrQA2X1/1s8aP0mTndhPxj3yjkrOCMm38WHHHl29E+04sDgIusUSNHda0FoRlWZO//LcbRjcm5Cz97YQauZTATFsYkbYii+tqsXpX/eLXEXIUt5ZHx7ejMJ2r6nDofGI9M="
 jobs:
