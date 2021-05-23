@@ -3,12 +3,12 @@ from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
+app.config['WTF_CSRF_ENABLED'] = False  # Sensitive
 csrf = CSRFProtect()
 csrf.init_app(app)
 
 
-@app.route('/', methods=['GET'])
-@csrf.exempt
+@app.route('/')
 def pagina_inicial():
     return "Hello World"
 

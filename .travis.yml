@@ -31,9 +31,9 @@ jobs:
         - pip install flask flask-wtf coverage pytest
       script: # Defini o script de Teste que deve rodar toda vez que o código for alterado.
         - pytest || travis_terminate 1;
-        - coverage run test_app.py || travis_terminate 1;
-        - coverage report app.py || travis_terminate 1;
-        - coverage xml app.py || travis_terminate 1;
+        - coverage run tests/test_app.py || travis_terminate 1;
+        - coverage report src/devopslab/app.py || travis_terminate 1;
+        - coverage xml src/devopslab/app.py || travis_terminate 1;
         - sonar-scanner
 
     - stage: STG Deploy
