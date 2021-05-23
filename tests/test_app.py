@@ -1,19 +1,23 @@
-import pytest
-
-from src.devopslab.app import app as flask_app
-
-
-@pytest.fixture
-def app():
-    yield flask_app
+from src.devopslab.app import app
+import unittest
 
 
-@pytest.fixture
-def client(app):
-    return app.test_client()
+class Test(unittest.TestCase):
+    def setUp(self):
+        # cria uma instância do unittest, precisa do nome "setUp"
+        self.app = app.test_client()
+
+        # envia uma requisicao GET para a URL
+        self.result = self.app.get('/')
+
+    def test_requisicao(self):
+        # compara o status da requisicao (precisa ser igual a 200)
+        self.assertEqual(self.result.status_code, 200)
+
+    def test_conteudo(self):
+        # verifica o retorno do conteudo da pagina
+        self.assertEqual(self.result.data.decode('utf-8'), "Hello World")
 
 
-def test_index(app, client):
-    res = client.get('/')
-    assert 200 == res.status_code
-    assert "Hello World" == res.get_data(as_text=True)
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

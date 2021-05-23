@@ -28,10 +28,9 @@ jobs:
       name: "Testes Unitarios"
       # Instalação de Módulos que são necessários para a Aplicação.
       install:
-        - pip install flask flask-wtf coverage pytest
+        - pip install flask flask-wtf coverage
       script: # Defini o script de Teste que deve rodar toda vez que o código for alterado.
-        - pytest || travis_terminate 1;
-        - coverage run tests/test_app.py || travis_terminate 1;
+        - coverage run -m unittest  tests/test_app.py  || travis_terminate 1;
         - coverage report src/devopslab/app.py || travis_terminate 1;
         - coverage xml src/devopslab/app.py || travis_terminate 1;
         - sonar-scanner
